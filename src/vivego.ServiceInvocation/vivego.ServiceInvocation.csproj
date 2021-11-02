@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.ServiceInvocation</PackageId>
+		<RootNamespace>vivego.ServiceInvocation</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="10.3.3" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+		<PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
+		<PackageReference Include="System.Interactive.Async" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.core\vivego.core.csproj" />
+		<ProjectReference Include="..\vivego.logger.HttpClient\vivego.logger.HttpClient.csproj" />
+		<ProjectReference Include="..\vivego.MediatR\vivego.MediatR.csproj" />
+		<ProjectReference Include="..\vivego.ServiceInvocation.Abstractions\vivego.ServiceInvocation.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.core.ServiceBuilder\vivego.ServiceBuilder.csproj" />
+	</ItemGroup>
+
+</Project>

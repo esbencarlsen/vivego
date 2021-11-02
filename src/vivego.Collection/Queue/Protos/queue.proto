@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.Queue.Model";
+
+package vivego.Queue;
+
+message QueueState {
+  int64 Head = 1;
+  int64 Tail = 2;
+  int64 CreatedAtUnixSeconds = 3;
+  map<string, bytes> MetaData = 4;
+}

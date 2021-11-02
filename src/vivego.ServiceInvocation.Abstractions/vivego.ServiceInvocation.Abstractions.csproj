@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.ServiceInvocation.Abstractions</PackageId>
+		<RootNamespace>vivego.ServiceInvocation</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.ServiceBuilder.Abstractions\vivego.ServiceBuilder.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

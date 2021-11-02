@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<IsPackable>false</IsPackable>
+		<Nullable>enable</Nullable>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.11" />
+		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="5.0.11" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="5.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+		<PackageReference Include="xunit" Version="2.4.1" />
+		<PackageReference Include="xunit.assert" Version="2.4.1" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.KeyValue.Abstractions\vivego.KeyValue.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Cached\vivego.KeyValue.Cached.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Cassandra\vivego.KeyValue.Cassandra.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.DynamoDb\vivego.KeyValue.DynamoDb.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Faster\vivego.KeyValue.Faster.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.File\vivego.KeyValue.File.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Grpc\vivego.KeyValue.Grpc.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.InMemory\vivego.KeyValue.InMemory.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.QueuedWrite\vivego.KeyValue.QueuedWrite.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Redis\vivego.KeyValue.Redis.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.S3\vivego.KeyValue.S3.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Sql\vivego.KeyValue.Sql.csproj" />
+		<ProjectReference Include="..\vivego.Serializer.NewtonJsonSerializer\vivego.Serializer.NewtonJsonSerializer.csproj" />
+		<ProjectReference Include="..\vivego.Serializer.SystemJsonSerializer\vivego.Serializer.SystemJsonSerializer.csproj" />
+	</ItemGroup>
+</Project>

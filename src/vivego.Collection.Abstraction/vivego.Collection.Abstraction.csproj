@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.Collection.Abstraction</PackageId>
+		<RootNamespace>vivego.Collection</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.18.1" />
+		<PackageReference Include="Grpc" Version="2.41.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.41.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.KeyValue.Abstractions\vivego.KeyValue.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.ServiceBuilder.Abstractions\vivego.ServiceBuilder.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="EventStore\Protos\eventstore.proto" GrpcServices="None" />
+	</ItemGroup>
+
+</Project>

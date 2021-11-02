@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.MessageBroker";
+
+package vivego.MessageBroker;
+
+message MessageBrokerEvent {
+	int64 EventId = 1;
+	int64 CreatedAt = 2;
+	MessageBrokerData Data = 3;
+}
+
+message MessageBrokerData {
+	bytes Data = 1;
+	map<string, string> MetaData = 2;
+}
+
+service MessageBrokerService {
+	rpc Publish (PublishRequest) returns (PublishReply);
+	rpc Get (GetRequest) returns (stream MessageBrokerEvent);
+	rpc Subscribe (SubscribeRequest) returns (SubscribeReply);
+	rpc UnSubscribe (UnSubscribeRequest) returns (UnSubscribeReply);
+}
+
+message PublishRequest {
+	string Topic = 1;
+	bytes Data = 2;
+	string ContentType = 3;
+}
+
+message PublishReply {
+}
+
+message GetRequest {
+	string SubscriptionId = 1;
+	int64 fromId = 2;
+	int32 Take = 3;
+	bool Stream = 4;
+}
+
+enum SubscriptionType {
+	Glob = 0;
+	RegEx = 1;
+}
+
+message SubscribeRequest {
+	string SubscriptionId = 1;
+	SubscriptionType Type = 2;
+	string Pattern = 3;
+}
+
+message SubscribeReply {
+}
+
+message UnSubscribeRequest {
+	string SubscriptionId = 1;
+	SubscriptionType Type = 2;
+	string Pattern = 3;
+}
+
+message UnSubscribeReply {
+}
+
+message SubscriptionEvent {
+	oneof Type {
+		SubscribeRequest Subscribe = 1;
+		UnSubscribeRequest UnSubscribe = 2;
+		SubscriptionSnapshot Snapshot = 3;
+	}
+}
+
+message SubscriptionSet {
+	string Id = 1;
+	repeated SubscribeRequest SubscribeRequest = 2;
+}
+
+message SubscriptionSnapshot {
+	int32 HashIdx = 1;
+	repeated SubscriptionSet SubscriptionSet = 2;
+}

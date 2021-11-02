@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "vivego.KeyValue.Grpc";
+
+package vivego.KeyValue.Grpc;
+
+import "keyvalue.proto";
+
+service KeyValueService {
+	rpc Set (vivego.KeyValue.Abstractions.SetKeyValueEntry) returns (SetReply);
+	rpc Get (GetRequest) returns (vivego.KeyValue.Abstractions.KeyValueEntry);
+	rpc Delete (vivego.KeyValue.Abstractions.DeleteKeyValueEntry) returns (DeleteResponse);
+	rpc GetFeatures (google.protobuf.Empty) returns (GetFeaturesResponse);
+	rpc Clear (google.protobuf.Empty) returns (google.protobuf.Empty);
+}
+
+message SetReply {
+	string ETag = 1;
+}
+
+message GetRequest {
+	string Key = 1;
+}
+
+message DeleteResponse {
+	bool Success = 1;
+}
+
+message GetFeaturesResponse {
+	int32 MaximumKeyLength = 1;
+	int64 MaximumDataSize = 2;
+	bool SupportsTtl = 3;
+	bool SupportsEtag = 4;
+}

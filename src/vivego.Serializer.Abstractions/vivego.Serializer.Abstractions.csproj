@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.Serializer.Abstractions</PackageId>
+		<RootNamespace>vivego.Serializer</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.18.1" />
+		<PackageReference Include="Grpc" Version="2.41.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.41.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="Protos\serializer.proto" GrpcServices="None" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.ServiceBuilder.Abstractions\vivego.ServiceBuilder.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

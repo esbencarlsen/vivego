@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.KeyValue.TimeToLive</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.KeyValue\vivego.KeyValue.csproj" />
+		<ProjectReference Include="..\vivego.Scheduler.Abstractions\vivego.Scheduler.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

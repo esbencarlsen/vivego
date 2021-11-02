@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.KeyValue.Grpc</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.18.1" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.40.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.41.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.KeyValue\vivego.KeyValue.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="..\vivego.KeyValue.Abstractions\Protos\keyvalue.proto" CompileOutputs="false" />
+		<Protobuf Include="Protos\*.proto" AdditionalImportDirs="..\vivego.KeyValue.Abstractions\Protos\" GrpcServices="Both" />
+	</ItemGroup>
+
+</Project>

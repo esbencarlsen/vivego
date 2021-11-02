@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.KeyValue.Faster</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.18.1" />
+		<PackageReference Include="Grpc" Version="2.41.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.41.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.FASTER.Core" Version="1.9.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.core\vivego.core.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue\vivego.KeyValue.csproj" />
+		<ProjectReference Include="..\vivego.Microsoft.Faster\vivego.Microsoft.Faster.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="..\vivego.KeyValue.Abstractions\Protos\keyvalue.proto" CompileOutputs="false" />
+		<Protobuf Include="Protos\*.proto" AdditionalImportDirs="..\vivego.KeyValue.Abstractions\Protos\" GrpcServices="None" />
+	</ItemGroup>
+</Project>

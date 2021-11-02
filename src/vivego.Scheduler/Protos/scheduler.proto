@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "serializer.proto";
+
+option csharp_namespace = "vivego.Scheduler.Model";
+
+package vivego.Scheduler;
+
+message ScheduledRequest {
+	string Id = 1;
+	.vivego.Serializer.Abstractions.SerializedValue Notification = 2;
+	int64 TriggerAtUnixTimeInMilliSeconds = 3;
+	int64 TriggerInMilliSeconds = 4;
+	int64 RepeatEveryMilliSeconds = 5;
+}
+
+message PersistentHashSetEntry {
+	bool Add = 1;
+	repeated string Entries = 2;
+}

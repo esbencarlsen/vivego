@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<PropertyGroup>
+		<Product>vivego</Product>
+		<LangVersion>preview</LangVersion>
+		<TrimUnusedDependencies>true</TrimUnusedDependencies>
+		<Authors>Esben Carlsen</Authors>
+		<Company>Vivego AB</Company>
+		<Copyright>Copyright Vivego AB</Copyright>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<IsPackable>false</IsPackable>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Nullable>enable</Nullable>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+		<NoWarn>CA2208;CA1031;CA1707;CA1716;CA1819;CA1056;CA9998;CA1031;CA1303;CA1822</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup Label="Analyzers">
+		<PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="3.3.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.NetCore.Analyzers" Version="3.3.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Nerdbank.GitVersioning">
+			<Version>3.4.240</Version>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="SecurityCodeScan.VS2019" Version="5.2.1" PrivateAssets="all"/>
+	</ItemGroup>
+</Project>

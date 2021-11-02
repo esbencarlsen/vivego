@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+		<NoWarn>$(NoWarn);CA1724</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.40.0" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+		<PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.5.0" />
+		<PackageReference Include="OrleansDashboard" Version="3.5.2" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+		<PackageReference Include="TimeSpanParserUtil" Version="1.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.KeyValue.Cached\vivego.KeyValue.Cached.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Cassandra\vivego.KeyValue.Cassandra.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.InMemory\vivego.KeyValue.InMemory.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Redis\vivego.KeyValue.Redis.csproj" />
+		<ProjectReference Include="..\vivego.MessageBroker.Client.Http\vivego.MessageBroker.Client.Http.csproj" />
+		<ProjectReference Include="..\vivego.MessageBroker\vivego.MessageBroker.csproj" />
+		<ProjectReference Include="..\vivego.Orleans.KeyValueProvider\vivego.Orleans.KeyValueProvider.csproj" />
+	</ItemGroup>
+
+</Project>

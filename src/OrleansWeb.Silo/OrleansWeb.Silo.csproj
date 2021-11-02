@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.Collection\vivego.Collection.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Http\vivego.KeyValue.Http.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.InMemory\vivego.KeyValue.InMemory.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Sql\vivego.KeyValue.Sql.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.TimeToLive\vivego.KeyValue.TimeToLive.csproj" />
+		<ProjectReference Include="..\vivego.logger.web\vivego.logger.web.csproj" />
+		<ProjectReference Include="..\vivego.Scheduler\vivego.Scheduler.csproj" />
+		<ProjectReference Include="..\vivego.Serializer.SystemJsonSerializer\vivego.Serializer.SystemJsonSerializer.csproj" />
+	</ItemGroup>
+
+</Project>

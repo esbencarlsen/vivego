@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.FASTER.Core" Version="1.9.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.core.ServiceBuilder\vivego.ServiceBuilder.csproj" />
+		<ProjectReference Include="..\vivego.core\vivego.core.csproj" />
+	</ItemGroup>
+
+</Project>

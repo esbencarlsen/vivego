@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.KeyValue.Faster";
+
+package vivego.KeyValue.Faster;
+
+import "keyvalue.proto";
+
+message Transaction {
+	vivego.KeyValue.Abstractions.SetKeyValueEntry Set = 1;
+	vivego.KeyValue.Abstractions.DeleteKeyValueEntry Delete = 2;
+}

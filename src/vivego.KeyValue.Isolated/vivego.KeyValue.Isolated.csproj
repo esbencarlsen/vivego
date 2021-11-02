@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.KeyValue.Isolated</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.core\vivego.core.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue\vivego.KeyValue.csproj" />
+		<ProjectReference Include="..\vivego.MediatR\vivego.MediatR.csproj" />
+	</ItemGroup>
+
+</Project>

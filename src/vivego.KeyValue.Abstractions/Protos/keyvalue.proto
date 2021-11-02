@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.KeyValue.Abstractions.Model";
+
+package vivego.KeyValue.Abstractions;
+
+enum NullValue {
+	NULL_VALUE = 0;
+}
+
+message NullableBytes {
+	oneof kind {
+		NullValue Null = 1;
+		bytes Data = 2;
+	}
+}
+
+message SetKeyValueEntry {
+	string Key = 1;
+	NullableBytes Value = 2;
+	int64 ExpiresInSeconds = 3;
+	string ETag = 4;
+	map<string, bytes> MetaData = 5;
+}
+
+message KeyValueEntry {
+	NullableBytes Value = 1;
+	int64 ExpiresAtUnixTimeSeconds = 2;
+	string ETag = 3;
+	map<string, bytes> MetaData = 4;
+}
+
+message DeleteKeyValueEntry {
+	string Key = 1;
+	string ETag = 2;
+	map<string, bytes> MetaData = 3;
+}

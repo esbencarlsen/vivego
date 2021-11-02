@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.Collection.Index.Model";
+
+package vivego.Collection.Index.Model;
+
+message Operations {
+  bool Add = 1;
+  repeated Operation Operation = 2;
+}
+
+message Operation {
+  bytes Field = 1;
+  bytes Data = 2;
+}

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNet.Glob" Version="3.1.3" />
+
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="5.0.0" />
+
+		<PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.5.0" />
+		<PackageReference Include="Microsoft.Orleans.Core" Version="3.5.0" />
+		<PackageReference Include="Microsoft.Orleans.CodeGenerator.MSBuild" Version="3.5.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+
+		<PackageReference Include="System.Interactive.Async" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.core\vivego.core.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Abstractions\vivego.KeyValue.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.MessageBroker.Abstractions\vivego.MessageBroker.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.MediatR\vivego.MediatR.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Orleans_CodeGenInputs Remove="EventStore\ReadBytes\ReadBytesRequest.cs" />
+	  <Orleans_CodeGenInputs Remove="EventStore\ReadBytes\ReadBytesRequestHandler.cs" />
+	</ItemGroup>
+
+</Project>

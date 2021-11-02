@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.EventStore";
+
+package vivego.EventStore;
+
+message EventStoreState {
+	int64 Version = 1;
+	int64 Count = 2;
+	int64 CreatedAtUnixTimeMilliseconds = 3;
+	int64 ExpiresInSeconds = 4;
+	int64 MaximumEventCount = 5;
+	int64 DeleteBeforeUnixTimeMilliseconds = 6;
+	map<string, bytes> MetaData = 7;
+}
+
+message Range {
+	int64 Start = 1;
+	int64 End = 2;
+}
+
+message EventData {
+	/// <summary>
+	/// The name of the event type. It is strongly recommended that these
+	/// use lowerCamelCase if projections are to be used.
+	/// </summary>
+	string Type = 1;
+
+	/// <summary>The raw bytes of the event data.</summary>
+	map<string, bytes> Data = 2;
+}
+
+message RecordedEvent {
+	/// <summary>The Event Stream that this event belongs to</summary>
+	string Id = 1;
+
+	/// <summary>The number of this event in the stream</summary>
+	int64 EventNumber = 2;
+
+	/// <summary>
+	/// A datetime representing when this event was created in the system
+	/// </summary>
+	int64 CreatedAt = 3;
+
+	/// <summary>The type of event this is</summary>
+	string Type = 4;
+
+	/// <summary>A byte array representing the data of this event</summary>
+	map<string, bytes> Data = 5;
+}
+
+message Version {
+	int64 Begin = 1;
+	int64 End = 2;
+}

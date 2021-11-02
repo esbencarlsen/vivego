@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.Serializer.Model";
+
+package vivego.Serializer.Abstractions;
+
+message SerializedValue {
+	map<string, bytes> Data = 1;
+}

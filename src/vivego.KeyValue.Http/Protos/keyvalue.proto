@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "vivego.KeyValue.Http.Model";
+
+package vivego.KeyValue.Http;
+
+message HttpContent {
+	string ContentType = 1;
+	bytes Data = 2;
+}

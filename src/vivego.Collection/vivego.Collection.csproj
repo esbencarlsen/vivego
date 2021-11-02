@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+		<PackageId>vivego.Collection</PackageId>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IsPackable>true</IsPackable>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Google.Protobuf" Version="3.18.1" />
+		<PackageReference Include="Grpc" Version="2.41.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.41.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\vivego.core\vivego.core.csproj" />
+		<ProjectReference Include="..\vivego.core.ServiceBuilder\vivego.ServiceBuilder.csproj" />
+		<ProjectReference Include="..\vivego.Collection.Abstraction\vivego.Collection.Abstraction.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Abstractions\vivego.KeyValue.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue\vivego.KeyValue.csproj" />
+		<ProjectReference Include="..\vivego.MediatR\vivego.MediatR.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="Index\Protos\Index.proto" GrpcServices="None" />
+		<Protobuf Include="Queue\Protos\queue.proto" GrpcServices="None" />
+	</ItemGroup>
+
+</Project>
