@@ -13,4 +13,10 @@
 		<ProjectReference Include="..\vivego.Scheduler.Abstractions\vivego.Scheduler.Abstractions.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Update="Nerdbank.GitVersioning">
+	    <Version>3.4.244</Version>
+	  </PackageReference>
+	</ItemGroup>
+
 </Project>

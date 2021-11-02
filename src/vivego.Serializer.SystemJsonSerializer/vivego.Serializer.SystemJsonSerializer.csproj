@@ -10,6 +10,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="System.Text.Json" Version="5.0.2" />
+		<PackageReference Update="Nerdbank.GitVersioning">
+		  <Version>3.4.244</Version>
+		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>

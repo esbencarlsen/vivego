@@ -7,11 +7,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\vivego.MessageBroker.Abstractions\vivego.MessageBroker.Abstractions.csproj"/>
+		<ProjectReference Include="..\vivego.MessageBroker.Abstractions\vivego.MessageBroker.Abstractions.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0"/>
+		<PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+		<PackageReference Update="Nerdbank.GitVersioning">
+		  <Version>3.4.244</Version>
+		</PackageReference>
 	</ItemGroup>
 
 </Project>
