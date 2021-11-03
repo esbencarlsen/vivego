@@ -6,26 +6,25 @@ using MediatR;
 
 using Microsoft.Extensions.Caching.Memory;
 
-namespace vivego.MediatR
+namespace vivego.MediatR;
+
+internal sealed class CacheInvalidationPipelineBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
 {
-	internal sealed class CacheInvalidationPipelineBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
+	private readonly Func<TRequest, string> _cacheKeyGenerator;
+	private readonly IMemoryCache _memoryCache;
+
+	public CacheInvalidationPipelineBehaviour(
+		Func<TRequest, string> cacheKeyGenerator,
+		IMemoryCache memoryCache)
 	{
-		private readonly Func<TRequest, string> _cacheKeyGenerator;
-		private readonly IMemoryCache _memoryCache;
+		_cacheKeyGenerator = cacheKeyGenerator ?? throw new ArgumentNullException(nameof(cacheKeyGenerator));
+		_memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
+	}
 
-		public CacheInvalidationPipelineBehaviour(
-			Func<TRequest, string> cacheKeyGenerator,
-			IMemoryCache memoryCache)
-		{
-			_cacheKeyGenerator = cacheKeyGenerator ?? throw new ArgumentNullException(nameof(cacheKeyGenerator));
-			_memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
-		}
-
-		public Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
-		{
-			string cacheKey = _cacheKeyGenerator(request);
-			_memoryCache.Remove(cacheKey);
-			return next();
-		}
+	public Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+	{
+		string cacheKey = _cacheKeyGenerator(request);
+		_memoryCache.Remove(cacheKey);
+		return next();
 	}
 }
