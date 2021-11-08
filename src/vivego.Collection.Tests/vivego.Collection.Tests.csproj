@@ -10,7 +10,7 @@
 		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Orleans.TestingHost" Version="3.5.0" />
+		<PackageReference Include="Microsoft.Orleans.TestingHost" Version="3.5.1" />
 		<PackageReference Include="MartinCostello.Logging.XUnit" Version="0.2.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
 		<PackageReference Include="xunit" Version="2.4.1" />
