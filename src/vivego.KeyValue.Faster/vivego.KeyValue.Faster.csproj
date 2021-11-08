@@ -18,9 +18,6 @@
 
 		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
 		<PackageReference Include="Microsoft.FASTER.Core" Version="1.9.6" />
-		<PackageReference Update="Nerdbank.GitVersioning">
-		  <Version>3.4.244</Version>
-		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>

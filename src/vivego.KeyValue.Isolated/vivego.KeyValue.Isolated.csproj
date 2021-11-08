@@ -14,10 +14,4 @@
 		<ProjectReference Include="..\vivego.MediatR\vivego.MediatR.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <PackageReference Update="Nerdbank.GitVersioning">
-	    <Version>3.4.244</Version>
-	  </PackageReference>
-	</ItemGroup>
-
 </Project>

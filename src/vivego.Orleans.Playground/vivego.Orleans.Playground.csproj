@@ -18,9 +18,6 @@
 		<PackageReference Include="Npgsql" Version="5.0.10" />
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
 		<PackageReference Include="OrleansDashboard" Version="3.5.2" />
-		<PackageReference Update="Nerdbank.GitVersioning">
-		  <Version>3.4.244</Version>
-		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>

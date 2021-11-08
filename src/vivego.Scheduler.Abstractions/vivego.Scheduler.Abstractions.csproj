@@ -12,9 +12,6 @@
     <ItemGroup Label="Packages">
         <PackageReference Include="MediatR" Version="9.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-        <PackageReference Update="Nerdbank.GitVersioning">
-          <Version>3.4.244</Version>
-        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
