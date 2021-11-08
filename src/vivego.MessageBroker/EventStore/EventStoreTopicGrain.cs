@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 
 using Orleans;
 using Orleans.Placement;
+using Orleans.Providers;
 using Orleans.Serialization;
 
 using vivego.KeyValue;

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -10,7 +9,6 @@ namespace vivego.KeyValue.Sql
 	{
 		public string TableName { get; }
 
-		[NotNull]
 		public DbSet<StateEntry> States { get; set; } = default!;
 
 		public StateDbContext(string tableName,

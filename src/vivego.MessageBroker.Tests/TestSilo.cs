@@ -36,7 +36,7 @@ namespace vivego.MessageBroker.Tests
 				{
 					collection.AddMemoryCache();
 					collection.AddLogging();
-					collection.AddInMemoryKeyValueStore("Persistent");
+					collection.AddInMemoryKeyValueStore("Default");
 				});
 			}
 		}
@@ -86,9 +86,8 @@ namespace vivego.MessageBroker.Tests
 					.ConfigureServices(services =>
 					{
 						services.AddMemoryCache();
-						services.AddInMemoryKeyValueStore("Default");
 						services
-							.AddInMemoryKeyValueStore("Persistent")
+							.AddInMemoryKeyValueStore("Default")
 							.Services
 							.AddSingleton(InstanceRepository.KeyValueStore);
 
@@ -96,10 +95,6 @@ namespace vivego.MessageBroker.Tests
 
 						services.AddSingleton<IMediator, Mediator>();
 						services.AddSingleton(p => new ServiceFactory(p.GetService!));
-						services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
-						services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
-						services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(RequestExceptionActionProcessorBehavior<,>));
-						services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(RequestExceptionProcessorBehavior<,>));
 					})
 					.EventStoreConfigureApplicationParts()
 					.PublishSubscribeConfigureApplicationParts();
