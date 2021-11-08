@@ -48,7 +48,7 @@ namespace vivego.KeyValue.Sql
 			StateDbContext stateDbContext = _stateDbContextFactory();
 			await using ConfiguredAsyncDisposable _ = stateDbContext.ConfigureAwait(false);
 
-			StateEntry exists = await stateDbContext.States
+			StateEntry? exists = await stateDbContext.States
 				.FindAsync(new object[] { request.Entry.Key }, cancellationToken)
 				.ConfigureAwait(false);
 			if (exists is null)
@@ -93,7 +93,7 @@ namespace vivego.KeyValue.Sql
 
 			StateDbContext stateDbContext = _stateDbContextFactory();
 			await using ConfiguredAsyncDisposable _ = _stateDbContextFactory().ConfigureAwait(false);
-			StateEntry stateEntry = await stateDbContext
+			StateEntry? stateEntry = await stateDbContext
 				.States
 				.AsNoTracking()
 				.Where(entry => entry.Id == request.Key)
@@ -132,7 +132,7 @@ namespace vivego.KeyValue.Sql
 			}
 			else
 			{
-				StateEntry stateEntry = await stateDbContext.States
+				StateEntry? stateEntry = await stateDbContext.States
 					.FindAsync(new object[] { request.Entry.Key }, cancellationToken)
 					.ConfigureAwait(false);
 				if (stateEntry is null)
