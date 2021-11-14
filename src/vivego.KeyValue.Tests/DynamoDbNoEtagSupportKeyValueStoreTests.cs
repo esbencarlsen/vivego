@@ -1,4 +1,4 @@
-﻿using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2;
 using Amazon.Runtime;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +10,7 @@ using Xunit;
 namespace vivego.KeyValue.Tests;
 
 [Trait("Category", "IntegrationTest")]
-public sealed class DynamoDbKeyValueStoreTests : KeyValueStoreTests
+public sealed class DynamoDbNoEtagSupportKeyValueStoreTests : KeyValueStoreTests
 {
 	protected override void ConfigureServices(IServiceCollection serviceCollection)
 	{
@@ -18,7 +18,7 @@ public sealed class DynamoDbKeyValueStoreTests : KeyValueStoreTests
 			.AddMemoryCache()
 			.AddDynamoDbKeyValueStore("A",
 				"deleteme",
-				true,
+				false,
 				new BasicAWSCredentials("x", "x"),
 				new AmazonDynamoDBConfig
 				{

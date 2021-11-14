@@ -14,6 +14,7 @@ namespace vivego.KeyValue.DynamoDb
 		public static IServiceBuilder AddDynamoDbKeyValueStore(this IServiceCollection collection,
 			string name,
 			string tableName,
+			bool supportsEtag,
 			AWSCredentials credentials,
 			AmazonDynamoDBConfig clientConfig)
 		{
@@ -30,7 +31,7 @@ namespace vivego.KeyValue.DynamoDb
 				return client;
 			});
 
-			builder.Services.AddSingleton(new DynamoDbKeyValueStoreRequestHandlerConfig(tableName));
+			builder.Services.AddSingleton(new DynamoDbKeyValueStoreRequestHandlerConfig(tableName, supportsEtag));
 			builder.Services.AddSingleton<DynamoDbKeyValueStoreRequestHandler>();
 
 			builder.RegisterKeyValueStoreRequestHandler<DynamoDbKeyValueStoreRequestHandler>();

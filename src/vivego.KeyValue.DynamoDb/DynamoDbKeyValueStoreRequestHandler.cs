@@ -43,7 +43,7 @@ namespace vivego.KeyValue.DynamoDb
 
 			_features = Task.FromResult(new KeyValueStoreFeatures
 			{
-				SupportsEtag = true,
+				SupportsEtag = config.SupportsEtag,
 				SupportsTtl = true,
 				MaximumDataSize = 1024L * 1024L * 1024L, // 1GB
 				MaximumKeyLength = 1024
@@ -60,7 +60,7 @@ namespace vivego.KeyValue.DynamoDb
 			if (request.Entry is null) throw new ArgumentNullException(nameof(request.Entry));
 			if (string.IsNullOrEmpty(request.Entry.Key)) throw new ArgumentException("Value cannot be null or empty.", nameof(request.Entry.Key));
 
-			KeyValueEntry keyValueEntry = request.Entry.ConvertToKeyValueEntry();
+			KeyValueEntry keyValueEntry = request.Entry.ConvertToKeyValueEntry(!_config.SupportsEtag);
 			Document document = new()
 			{
 				["Id"] = request.Entry.Key,
@@ -130,6 +130,13 @@ namespace vivego.KeyValue.DynamoDb
 				}
 
 				KeyValueEntry entry = KeyValueEntry.Parser.ParseFrom(data.AsByteArray());
+
+				if (entry.ExpiresAtUnixTimeSeconds > 0
+					&& DateTimeOffset.UtcNow > DateTimeOffset.FromUnixTimeSeconds(entry.ExpiresAtUnixTimeSeconds))
+				{
+					return KeyValueEntryExtensions.KeyValueNull;
+				}
+
 				return entry;
 			}
 			catch (ResourceNotFoundException)
@@ -145,7 +152,8 @@ namespace vivego.KeyValue.DynamoDb
 
 			Table table = await _lazyInitTask.Value.ConfigureAwait(false);
 
-			if (!string.IsNullOrEmpty(request.Entry.ETag))
+			if (_config.SupportsEtag
+				&& !string.IsNullOrEmpty(request.Entry.ETag))
 			{
 				Expression expr = new()
 				{
