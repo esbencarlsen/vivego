@@ -155,6 +155,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.MessageBroker.Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.MessageBroker.Client.Http", "src\vivego.MessageBroker.Client.Http\vivego.MessageBroker.Client.Http.csproj", "{22266E64-93B2-4F98-B5AF-300D669A8DC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.KeyValue.AzureTableStorage", "src\vivego.KeyValue.AzureTableStorage\vivego.KeyValue.AzureTableStorage.csproj", "{A940A25E-3934-4BA0-B806-6834B705E32D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -397,6 +399,10 @@ Global
 		{22266E64-93B2-4F98-B5AF-300D669A8DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22266E64-93B2-4F98-B5AF-300D669A8DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22266E64-93B2-4F98-B5AF-300D669A8DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A940A25E-3934-4BA0-B806-6834B705E32D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A940A25E-3934-4BA0-B806-6834B705E32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A940A25E-3934-4BA0-B806-6834B705E32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A940A25E-3934-4BA0-B806-6834B705E32D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -458,6 +464,7 @@ Global
 		{AC3E832C-84DB-4EB9-992F-1A57FCDC9750} = {CF5279AF-BB5D-44FE-9BA5-723F962AA6A4}
 		{7D5A675B-1143-4B4D-A025-8E3F6BC9F6B6} = {CF5279AF-BB5D-44FE-9BA5-723F962AA6A4}
 		{22266E64-93B2-4F98-B5AF-300D669A8DC8} = {CF5279AF-BB5D-44FE-9BA5-723F962AA6A4}
+		{A940A25E-3934-4BA0-B806-6834B705E32D} = {A33B7284-DC86-456E-B2D7-C7AFCB57CAFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C618032-7D44-42E2-88D7-276869F6C150}

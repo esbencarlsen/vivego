@@ -5,7 +5,8 @@
 		<IsPackable>false</IsPackable>
 		<Nullable>enable</Nullable>
 		<OutputType>Exe</OutputType>
-	</PropertyGroup>
+	  	<UserSecretsId>vivego.KeyValue.Tests</UserSecretsId>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
@@ -26,6 +27,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\vivego.KeyValue.Abstractions\vivego.KeyValue.Abstractions.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.AzureTableStorage\vivego.KeyValue.AzureTableStorage.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.Cached\vivego.KeyValue.Cached.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.Cassandra\vivego.KeyValue.Cassandra.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.DynamoDb\vivego.KeyValue.DynamoDb.csproj" />

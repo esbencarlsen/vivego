@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using vivego.KeyValue.AzureTableStorage;
 using vivego.Serializer;
 
 using Xunit;
@@ -13,11 +15,15 @@ namespace vivego.KeyValue.Tests
 	public abstract class KeyValueStoreTests : IAsyncLifetime
 	{
 #pragma warning disable CA1051
-		// ReSharper disable once InconsistentNaming
+		// ReSharper disable InconsistentNaming
 		protected readonly IHost _host;
+		protected readonly IConfigurationRoot? _configuration;
 
 		protected KeyValueStoreTests()
 		{
+			ConfigurationBuilder configurationBuilder = new();
+			configurationBuilder.AddUserSecrets<KeyValueStoreTests>(true);
+			_configuration = configurationBuilder.Build();
 			HostBuilder hostBuilder = new();
 			hostBuilder.ConfigureServices(collection =>
 			{
@@ -157,7 +163,7 @@ namespace vivego.KeyValue.Tests
 		}
 
 		[Fact]
-		public async Task CanSetAndSetWithETag()
+		public virtual async Task CanSetAndSetWithETag()
 		{
 			IKeyValueStore keyValueStore = _host.Services.GetRequiredService<IKeyValueStore>();
 
