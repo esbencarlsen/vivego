@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-using vivego.KeyValue.AzureTableStorage;
 using vivego.Serializer;
 
 using Xunit;
