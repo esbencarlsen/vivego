@@ -30,6 +30,7 @@
 		<ProjectReference Include="..\vivego.KeyValue.AzureTableStorage\vivego.KeyValue.AzureTableStorage.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.Cached\vivego.KeyValue.Cached.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.Cassandra\vivego.KeyValue.Cassandra.csproj" />
+		<ProjectReference Include="..\vivego.KeyValue.Couchbase\vivego.KeyValue.Couchbase.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.DynamoDb\vivego.KeyValue.DynamoDb.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.Faster\vivego.KeyValue.Faster.csproj" />
 		<ProjectReference Include="..\vivego.KeyValue.File\vivego.KeyValue.File.csproj" />
