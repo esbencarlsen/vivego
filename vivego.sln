@@ -159,6 +159,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.KeyValue.AzureTableS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.KeyValue.Couchbase", "src\vivego.KeyValue.Couchbase\vivego.KeyValue.Couchbase.csproj", "{B4E2F90A-4728-4AD3-8CDE-E65A5C468629}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProtoActor", "ProtoActor", "{139AFC59-38BD-4A8E-A365-FE455E2D2D86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -9,7 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CassandraCSharpDriver" Version="3.17.0" />
+		<PackageReference Include="CassandraCSharpDriver" Version="3.17.1" />
 	</ItemGroup>
 
 	<ItemGroup>

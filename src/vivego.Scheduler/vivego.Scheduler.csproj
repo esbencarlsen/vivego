@@ -17,7 +17,7 @@
         </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
-        <PackageReference Include="System.Interactive.Async" Version="5.0.0" />
+        <PackageReference Include="System.Interactive.Async" Version="5.1.0" />
     </ItemGroup>
 
     <ItemGroup>
