@@ -161,6 +161,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.KeyValue.Couchbase",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProtoActor", "ProtoActor", "{139AFC59-38BD-4A8E-A365-FE455E2D2D86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vivego.ProtoActor", "src\vivego.ProtoActor\vivego.ProtoActor.csproj", "{CC2C23FC-3FD3-4811-80C5-5FCB25A5A950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vngage.ProtoActor.KeyValuePersistence", "src\vngage.ProtoActor.KeyValuePersistence\vngage.ProtoActor.KeyValuePersistence.csproj", "{7B1A3AFA-9769-483B-B339-0D53D642D864}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -411,6 +415,14 @@ Global
 		{B4E2F90A-4728-4AD3-8CDE-E65A5C468629}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E2F90A-4728-4AD3-8CDE-E65A5C468629}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E2F90A-4728-4AD3-8CDE-E65A5C468629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2C23FC-3FD3-4811-80C5-5FCB25A5A950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2C23FC-3FD3-4811-80C5-5FCB25A5A950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2C23FC-3FD3-4811-80C5-5FCB25A5A950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2C23FC-3FD3-4811-80C5-5FCB25A5A950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1A3AFA-9769-483B-B339-0D53D642D864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1A3AFA-9769-483B-B339-0D53D642D864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1A3AFA-9769-483B-B339-0D53D642D864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1A3AFA-9769-483B-B339-0D53D642D864}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -474,6 +486,8 @@ Global
 		{22266E64-93B2-4F98-B5AF-300D669A8DC8} = {CF5279AF-BB5D-44FE-9BA5-723F962AA6A4}
 		{A940A25E-3934-4BA0-B806-6834B705E32D} = {A33B7284-DC86-456E-B2D7-C7AFCB57CAFA}
 		{B4E2F90A-4728-4AD3-8CDE-E65A5C468629} = {A33B7284-DC86-456E-B2D7-C7AFCB57CAFA}
+		{CC2C23FC-3FD3-4811-80C5-5FCB25A5A950} = {139AFC59-38BD-4A8E-A365-FE455E2D2D86}
+		{7B1A3AFA-9769-483B-B339-0D53D642D864} = {139AFC59-38BD-4A8E-A365-FE455E2D2D86}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C618032-7D44-42E2-88D7-276869F6C150}

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Proto.Persistence" Version="0.26.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\vivego.KeyValue.Abstractions\vivego.KeyValue.Abstractions.csproj" />
+      <ProjectReference Include="..\vivego.Serializer.Abstractions\vivego.Serializer.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>
